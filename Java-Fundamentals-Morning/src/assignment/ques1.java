@@ -33,7 +33,7 @@ public class ques1 {
 	
 	public static void fun() throws Exception
 	{
-        File inputFile = new File("C:\\Users\\jayas\\Desktop\\acc univ\\day7 java\\mrng assign\\input\\student.xml");
+        File inputFile = new File("file:///Users/madhav.palagani/SAU-Feb-Batch-2/Java-Fundamentals-Morning/student.xml");
         
         DocumentBuilderFactory documentfactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docbuilder = documentfactory.newDocumentBuilder();
@@ -71,7 +71,7 @@ public class ques1 {
         	}
         }
         
-        PrintWriter outfile = new PrintWriter("C:\\Users\\jayas\\Desktop\\acc univ\\day7 java\\mrng assign\\output\\student.txt");
+        PrintWriter outfile = new PrintWriter("file:///Users/madhav.palagani/SAU-Feb-Batch-2/Java-Fundamentals-Morning/student.txt");
         
         
         for (int index: studmap.keySet()) {

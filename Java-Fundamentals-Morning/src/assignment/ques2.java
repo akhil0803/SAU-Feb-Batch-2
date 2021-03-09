@@ -27,7 +27,7 @@ public class ques2 {
 	{
 	    PriorityQueue<student> pq = new PriorityQueue<student>(new StudentComparator());     
 	    
-	    BufferedReader fin = new BufferedReader(new FileReader("C:\\Users\\jayas\\Desktop\\acc univ\\day7 java\\ques1\\output\\student.txt"));
+	    BufferedReader fin = new BufferedReader(new FileReader("file:///Users/madhav.palagani/SAU-Feb-Batch-2/Java-Fundamentals-Morning/student.txt"));
 	    
 	    String c;
 	    while((c=fin.readLine())!=null)
@@ -42,7 +42,7 @@ public class ques2 {
 	   	StringBuffer strbuf = new StringBuffer();
 	   	
 	    strbuf.append("Rank, Roll Number, Total Marks");
-	    FileOutputStream outputfile = new FileOutputStream("C:\\Users\\jayas\\Desktop\\acc univ\\day7 java\\ques1\\output\\answer2.csv");
+	    FileOutputStream outputfile = new FileOutputStream("file:///Users/madhav.palagani/SAU-Feb-Batch-2/Java-Fundamentals-Morning/answer2.CSV");
 	    BufferedWriter outputcsv = new BufferedWriter(new OutputStreamWriter(outputfile, "UTF-8"));
 	    
 	    outputcsv.write(strbuf.toString());
