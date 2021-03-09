@@ -1,0 +1,55 @@
+insert into product values(1,'cup',10);
+insert into product values(2,'glass',10);
+insert into product values(3,'vessel',20);
+insert into product values(4,'table',2);
+
+insert into salesexecutive values(1,'Akhil','2000-02-23',8897474688,'Male');
+insert into salesexecutive values(2,'Anvitha','1999-02-13',9440584988,'Female');
+insert into salesexecutive values(3,'Nitin','1998-08-24',8989370368,'Male');
+insert into salesexecutive values(4,'Hari','2000-05-04',8745683416,'Male');
+
+insert into customer values(1,'Akhil','2000-05-19',8941321203,'Male');
+insert into customer values(2,'Janu','1998-11-28',9493993043,'Female');
+insert into customer values(3,'Tarak','2000-02-21',8985576432,'Male');
+insert into customer values(4,'Surya','2000-07-05',9440736633,'Male');
+
+
+insert into location values(1,'hyderabad');
+insert into location values(2,'chennai');
+insert into location values(3,'banglore');
+insert into location values(4,'mumbai');
+
+
+insert into resides values(1,1);
+insert into resides values(2,2);
+insert into resides values(3,3);
+insert into resides values(4,4);
+
+
+insert into markets values(1,1);
+insert into markets values(2,2);
+insert into markets values(3,3);
+insert into markets values(4,4);
+
+
+insert into grouped values(1,1);
+insert into grouped values(1,2);
+insert into grouped values(2,3);
+insert into grouped values(3,4);
+
+insert into buy values(1,1,'2020-08-06',5);
+insert into buy values(2,2,'2020-08-07',10);
+insert into buy values(3,3,'2021-02-08',11);
+insert into buy values(4,4,'2021-02-09',31);
+insert into buy values(2,1,'2021-02-10',11);
+insert into buy values(1,2,'2021-02-11',1);
+insert into buy values(4,1,'2021-02-12',20);
+
+select sales_executiveid,name,dob,mobile_number,sum(number_of_units)
+from salesexecutive natural join markets natural join buy group by sales_executiveid ;
+
+
+
+select p.product_name,l.location_name from product p,buy b,resides h,location l,customer c 
+where p.product_code=b.product_code and b.customer_id=c.customer_id and c.customer_id=h.customer_id and h.location_code=l.location_code and l.location_name='hyderabad' and 
+b.date_of_purchase between '2020-08-06' and'2021-02-15' order by b.number_of_units desc limit 1;

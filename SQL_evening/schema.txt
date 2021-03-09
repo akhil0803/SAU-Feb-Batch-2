@@ -1,0 +1,76 @@
+
+create table product
+(
+	product_code integer primary key,
+	product_name varchar(30),
+	unit_price integer
+);
+
+create table category
+(
+	category_code integer primary key,
+	category_name varchar(30)
+);
+
+create table customer
+(
+	customer_id integer primary key,
+	name varchar(30),
+	dob date,
+	mobile_number integer,
+	gender varchar(10)
+);
+
+
+create table salesexecutive
+(
+	sales_executiveid integer primary key,
+	name varchar(30),
+	dob date,
+	mobile_number integer,
+	gender varchar(10)
+);
+
+create table location
+(
+	location_code integer primary key,
+	location_name varchar(30)
+);
+
+create table markets
+(
+	product_code integer,
+	sales_executiveid integer
+);
+
+create table grouped
+(
+	category_code integer,
+	product_code integer
+);
+create table buy
+(
+	product_code integer,
+	customer_id integer,
+	date_of_purchase date,
+	number_of_units integer
+);
+
+create table resides
+(
+	customer_id integer,
+	location_code integer
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
