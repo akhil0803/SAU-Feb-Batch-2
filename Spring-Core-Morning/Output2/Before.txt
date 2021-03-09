@@ -1,0 +1,2 @@
+Before 'show' is called.
+Hey There! I'm in 'show' method.
